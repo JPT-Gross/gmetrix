@@ -52,6 +52,34 @@
             <span id="y">y</span>
         </p>
         <button type="button" onclick="incAndMod()">+</button>
+        <h2>Best Practices</h2>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/ea0e61c4d3007288bac1b1342aca35ce.js"></script>
+            </div>
+        </div>
+        <p>
+            The snippet above describes correct formatting for JavaScript
+            comments, indentation, and naming conventions,
+        </p>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/240b69b654e5a5226c0d1c8d1bd65089.js"></script>
+            </div>
+        </div>
+        <p>
+            To send information to the command console, we use the JavaScript
+            function console.log(); <br />
+            If you right-click and click inspect on this page, the command
+            console should read "Hello, World!".
+        </p>
+        <h2>Exception Handling</h2>
+        <p>
+            The button below calls a function that is written incorrectly on
+            purpose to throw an exception. Click and see:
+        </p>
+        <button type="button" onclick="error()">ERROR</button>
+        <p id="error"></p>
     </body>
     <script>
         var x = 500;
@@ -76,7 +104,18 @@
         }
         function incAndMod() {
             y = (y + 1) % 6;
-            document.getElementById("y").innerHTML = y;
+            document.getElementById('y').innerHTML = y;
+        }
+        console.log('Hello, World!');
+        function error() {
+            try {
+                adddlert('Welcome!');
+            } catch (err) {
+                alert('!ERROR!: ' + err.message);
+            } finally {
+                document.getElementById('error').innerHTML =
+                    'Hope that worked!';
+            }
         }
     </script>
 </html>
