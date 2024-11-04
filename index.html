@@ -74,12 +74,41 @@
             console should read "Hello, World!".
         </p>
         <h2>Exception Handling</h2>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/1af73df7a3d134f3d2c2ea53f47b8d2a.js"></script>
+            </div>
+        </div>
         <p>
             The button below calls a function that is written incorrectly on
             purpose to throw an exception. Click and see:
         </p>
         <button type="button" onclick="error()">ERROR</button>
         <p id="error"></p>
+        <h2>The Browser Object Model (B.O.M.)</h2>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/331e7e9bf15b29f56a36c20b2684c63d.js"></script>
+            </div>
+        </div>
+        <p>
+            The button below will cause the browser to launch a confirm dialogue
+            box. Try it now:
+        </p>
+        <button type="button" onclick="confirmName()">Confirm</button>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/9f17bd8364992ba87c4dac6a1dc393ab.js"></script>
+            </div>
+        </div>
+        <p>
+            Your screen resolution is:
+            <span id="sResolution">Resolution not found.</span>
+        </p>
+        <p>
+            The resolution of this current window is
+            <span id="wResolution">Resolution not found.</span>
+        </p>
     </body>
     <script>
         var x = 500;
@@ -117,5 +146,15 @@
                     'Hope that worked!';
             }
         }
+        function confirmName() {
+            var yourName = prompt('Enter your Name');
+            if (confirm('Is this your name?') == true) {
+                alert('Welcome ' + yourName + '!');
+            }
+        }
+        document.getElementById('sResolution').innerHTML =
+            screen.width + ' x ' + screen.height;
+        document.getElementById('wResolution').innerHTML =
+            window.innerWidth + ' x ' + window.innerHeight;
     </script>
 </html>
