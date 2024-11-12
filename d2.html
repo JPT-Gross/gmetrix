@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Domain 2</title>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Domain 2</h1>
+        <h2>Variables, Data Types, and Functions</h2>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/0f090dd7ab2a327d685b9105f0cdf7b4.js"></script>
+            </div>
+        </div>
+        <p id="vtypes"></p>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/865e3417f2ab9e72e4c10c58c7dad2ab.js"></script>
+            </div>
+        </div>
+        <p>
+            We can use the parseInt() method to convert a string into a number:
+        </p>
+        <p id="parse"></p>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/e819b5cce09fccf26b808f5b1e57b426.js"></script>
+            </div>
+        </div>
+        <p>
+            We can use the parseFloat() method to convert a string that includes
+            a decimal into a number:
+        </p>
+        <p id="parseF"></p>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/5c7df7d09956a57bbd6b70f31c211ff1.js"></script>
+            </div>
+        </div>
+        <p>We can format numbers in a variety of useful ways:</p>
+        <p id="format"></p>
+    </body>
+    <script>
+        var num = 12; // number
+        var bool = true; // boolean
+        var stringy = 'hello'; // string
+        var empty = null; // object
+        var undef; // undefined
+
+        document.getElementById('vtypes').innerHTML =
+            'The num variable is type: ' +
+            typeof num +
+            '<br/> The bool variable is type: ' +
+            typeof bool +
+            '<br/> The stringy variable is type: ' +
+            typeof stringy +
+            '<br/> The empty variable is type: ' +
+            typeof empty +
+            '<br/> The undef variable is type: ' +
+            typeof undef;
+
+        var address = '12345 W Bozo DR.';
+
+        document.getElementById('parse').innerHTML =
+            'Before: ' + address + '<br> After: ' + parseInt(address);
+
+        var cost = '100.51$';
+
+        document.getElementById('parseF').innerHTML =
+            'Before: ' + cost + '<br> After: ' + parseFloat(cost);
+
+        var newCost = parseFloat(cost);
+        newCost = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+        }).format(newCost);
+
+        document.getElementById('format').innerHTML =
+            'Before: ' + cost + '<br> After: ' + newCost;
+    </script>
+</html>
