@@ -87,6 +87,48 @@
             An array is a special variable, which can hold more than one value.
         </p>
         <p id="array"></p>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/051855ee3444be0f92a91a3c5ad86839.js"></script>
+            </div>
+        </div>
+        <p>
+            We can loop through arrays with a for loop and add them to an
+            Unordered List like so:
+        </p>
+        <div id="iteration"></div>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/69c219dfb1de70595856b3298d49b146.js"></script>
+            </div>
+        </div>
+        <p>We can sort arrays with .sort()</p>
+        <p id="sort"></p>
+        <p>We can find the index of an item in an array with .indexOf()</p>
+        <p id="search"></p>
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/d08d151e41f47c904d247025c751d9de.js"></script>
+            </div>
+        </div>
+        <p>
+            We can add items to the end of an array with .push(), <br />
+            We can remove items from the end with .pop().
+        </p>
+        <p id="push"></p>
+        <p id="pop"></p>
+
+        <div class="snippet">
+            <div>
+                <script src="https://gist.github.com/JPT-Gross/4b17ea6c6f590aa142c9d4d8c5916bf5.js"></script>
+            </div>
+        </div>
+        <p>
+            We can add items to the start of an array with .unshift(), <br />
+            We can remove items from the start with .shift().
+        </p>
+        <p id="unshift"></p>
+        <p id="shift"></p>
     </body>
     <script>
         var num = 12; // number
@@ -151,11 +193,45 @@
 
         const cars = ['Toyota', 'Chevy', 'Nissan'];
 
-
-        function show(id){
+        function show(id) {
             return document.getElementById(id);
         }
 
         show('array').innerHTML = cars;
+
+        const shoppingList = ['Milk', 'Eggs', 'Bread', 'Rice', 'Cheese'];
+
+        document.getElementById('iteration').innerHTML =
+            '<h2>Shopping List:</h2>';
+        document.getElementById('iteration').innerHTML += '<ul>';
+
+        for (var i = 0; i < shoppingList.length; i++) {
+            document.getElementById('iteration').innerHTML +=
+                '<li>' + shoppingList[i] + '</li>';
+        }
+
+        document.getElementById('iteration').innerHTML += '</ul>';
+
+        document.getElementById('sort').innerHTML = shoppingList.sort();
+        document.getElementById('search').innerHTML =
+            shoppingList.indexOf('cheese');
+
+        shoppingList.push('Twix');
+        shoppingList.push('Push-Pop');
+
+        document.getElementById('push').innerHTML = shoppingList;
+
+        shoppingList.pop();
+        shoppingList.pop();
+        shoppingList.pop();
+        shoppingList.pop();
+        shoppingList.pop();
+
+        document.getElementById('pop').innerHTML = shoppingList;
+
+        shoppingList.unshift('TicTacs');
+        document.getElementById('unshift').innerHTML = shoppingList;
+        shoppingList.shift();
+        document.getElementById('shift').innerHTML = shoppingList;
     </script>
 </html>
