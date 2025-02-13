@@ -1,0 +1,38 @@
+<style>
+    p {
+        font-size: 5em;
+    }
+</style>
+<p>
+    var y = 5; <br />
+    var x = y++; sets x to y before y goes up by one. <br />
+    x:
+
+    <span id="x">x</span>
+    <br />
+    y:
+    <span id="y">y</span>
+</p>
+
+<p>
+    var b = 5; <br />
+    var a = ++b; sets a to b after b goes up by one. <br />
+    a:
+    <span id="a">a</span>
+    <br />
+    b:
+    <span id="b">b</span>
+</p>
+<script>
+    var y = 5;
+    var x = y++;
+
+    document.getElementById('x').innerHTML = x;
+    document.getElementById('y').innerHTML = y;
+
+    var b = 5;
+    var a = ++b;
+
+    document.getElementById('b').innerHTML = b;
+    document.getElementById('a').innerHTML = a;
+</script>
